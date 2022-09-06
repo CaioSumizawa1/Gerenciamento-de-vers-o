@@ -1,5 +1,5 @@
 {
-  "name": "listadecompra",
+  "name": "lista_compras",
   "integrations": {
     "capacitor": {}
   },

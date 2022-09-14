@@ -1,0 +1,63 @@
+<ion-content [fullscreen]="true">
+  <div id="posicionamento">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-input placeholder="produto" [(ngModel)]="texto" (keyup.enter)="adiciona()"></ion-input>
+          </ion-item>
+        </ion-col>
+      <ion-col size="3">
+          <ion-item>
+            <ion-input placeholder="preco" [(ngModel)]="preco" (keyup.enter)="adiciona()"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button id="botãoad" size="small" (click)="adiciona()">
+            <ion-icon name="chevron-down-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item *ngFor = "let elemento_da_lista of variavel_lista; index as i">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  {{elemento_da_lista[1][0]}}
+                </ion-col>
+                <ion-col size="3"> 
+                  {{elemento_da_lista[1][1]}}
+                </ion-col>
+                <ion-col size="3">
+                  <ion-button id="botãomenos" size="small" (click)="remove(elemento_da_lista[0][0])">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+    <div id="posicionamento">
+    <ion-row>
+      <ion-col size="4"> 
+        <ion-item>
+        <h6>Total</h6>
+        </ion-item>
+      </ion-col>  
+      <ion-col> 
+        <ion-item>
+          <h6>R${{total}}</h6>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3"> 
+          <ion-item>
+            <ion-icon name="cash-outline"></ion-icon>
+          </ion-item>
+        </ion-col>  
+    </ion-row>
+    </div>
+</ion-content>
